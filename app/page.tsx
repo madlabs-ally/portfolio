@@ -1,113 +1,143 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 items-center">
+          <div className="mr-4 hidden md:flex">
+            <a className="mr-6 flex items-center space-x-2" href="/">
+              <span className="hidden font-bold sm:inline-block">Madalitso Simbeye</span>
+            </a>
+            <nav className="flex items-center space-x-6 text-sm font-medium">
+              <a className="transition-colors hover:text-foreground/80 text-foreground/60" href="#about">About</a>
+              <a className="transition-colors hover:text-foreground/80 text-foreground/60" href="#skills">Skills</a>
+              <a className="transition-colors hover:text-foreground/80 text-foreground/60" href="#projects">Projects</a>
+              <a className="transition-colors hover:text-foreground/80 text-foreground/60" href="#contact">Contact</a>
+            </nav>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <section id="about" className="py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  Madalitso Simbeye
+                </h1>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Full Stack Developer passionate about creating efficient and user-friendly web applications.
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Button asChild>
+                  <a href="#contact">Contact Me</a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="#projects">View Projects</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* Skills Section */}
+        <section id="skills" className="py-12">
+          <h2 className="text-2xl font-bold mb-6">Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {["JavaScript", "TypeScript", "React", "Node.js", "Python", "Django", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Agile"].map((skill) => (
+              <div key={skill} className="bg-secondary text-secondary-foreground rounded-md p-2 text-center">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {/* Projects Section */}
+        <section id="projects" className="py-12">
+          <h2 className="text-2xl font-bold mb-6">Projects</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle>E-commerce Platform</CardTitle>
+                <CardDescription>A full-stack e-commerce solution</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-2">Built with React, Node.js, and MongoDB</p>
+                <Button variant="outline" asChild className="w-full">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Task Management App</CardTitle>
+                <CardDescription>Efficient task tracking for teams</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-2">Developed using Django and PostgreSQL</p>
+                <Button variant="outline" asChild className="w-full">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Weather Forecast API</CardTitle>
+                <CardDescription>RESTful API for weather data</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-2">Created with Node.js and Express</p>
+                <Button variant="outline" asChild className="w-full">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        {/* Contact Section */}
+        <section id="contact" className="py-12">
+          <h2 className="text-2xl font-bold mb-6">Contact Me</h2>
+          <div className="flex flex-col space-y-4">
+            <a href="mailto:madalitso.simbeye@example.com" className="flex items-center space-x-2 text-primary hover:underline">
+              <Mail className="h-5 w-5" />
+              <span>madalitso.simbeye@example.com</span>
+            </a>
+            <a href="https://github.com/madalitso-simbeye" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-primary hover:underline">
+              <Github className="h-5 w-5" />
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/madalitso-simbeye" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-primary hover:underline">
+              <Linkedin className="h-5 w-5" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </section>
+      </main>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+      {/* Footer */}
+      <footer className="border-t py-6 md:py-0">
+        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+              © 2023 Madalitso Simbeye. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
 }
